@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[newTable2]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[char_name] NVARCHAR(20) NOT NULL CONSTRAINT DF_NEWTABLE2_CHAR default ('shin') 
+)

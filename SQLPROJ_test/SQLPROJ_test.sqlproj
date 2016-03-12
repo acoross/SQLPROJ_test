@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{ac963591-56fc-4daa-88fb-691d329094dc}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -60,8 +60,20 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Table" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\pre-deploy" />
+    <Folder Include="Scripts\post-deploy" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="User.sql" />
+    <Build Include="dbo\Table\User.sql" />
+    <Build Include="dbo\Table\newTable2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SQLPROJ_test.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\pre-deploy\Script.PreDeployment1.sql" />
   </ItemGroup>
 </Project>
